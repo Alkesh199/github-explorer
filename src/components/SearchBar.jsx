@@ -20,7 +20,7 @@ const SearchBar = () => {
 
   return (
     <div className="searchbar-container">
-      <input value = {searchText} onChange={handleSearchText} placeholder="search profiles"></input>
+      <input value = {searchText} onChange={handleSearchText} placeholder="search profiles globally"></input>
       <button className="btn btn-search" onClick={handleSearchBtnClick}>Search</button>
       <button className="btn clear-btn" onClick={clearBtnClick}>Reset</button>
     </div>

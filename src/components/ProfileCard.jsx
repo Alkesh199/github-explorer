@@ -1,6 +1,18 @@
-const ProfileCard = () =>{
+import "../styles/profileCard.css";
+import { Link } from "react-router-dom";
+
+const ProfileCard = ({user}) =>{
     return(
-        <h1>profile card there</h1>
+        <div className="profile-card">
+            <div>
+                <img src = {user.avatar_url}></img>
+            </div>
+            <div>
+                <p className="user-name">{user.login}</p>
+                <Link to={user.html_url}>{user.html_url}</Link>
+
+            </div>
+        </div>
     )
 }
 

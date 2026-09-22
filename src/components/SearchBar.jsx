@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { AppContext } from "../context/Context";
+import { useContext } from "react";
+
 import "../styles/searchBar.css";
 
 const SearchBar = () => {
-    const [searchText,setSearchText] = useState("");
+    const {filteredProfilesText,setFilteredProfilesText} = useContext(AppContext);
+    const [searchText,setSearchText] = useState(filteredProfilesText);
+    
 
     const handleSearchText = (e) =>{
        setSearchText(e.target.value);
@@ -10,12 +15,18 @@ const SearchBar = () => {
 
     const handleSearchBtnClick = ()=>{
         if(searchText.length===0){
+            setFilteredProfilesText("");
             alert("can't search with empty name");
         }
+        else{
+            setFilteredProfilesText(searchText);
+        }
+        
     }
 
     const clearBtnClick = () =>{
         console.log("clear btn clicked");
+        setFilteredProfilesText("");
         setSearchText("");
     }
     console.log(searchText);

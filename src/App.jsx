@@ -1,5 +1,5 @@
 import HomePage from "./pages/HomePage"
-import UserProfilePage from "./pages/UserProfilePage"
+import UserProfileDetails from "./pages/UserProfileDetails"
 import { RouterProvider } from "react-router-dom"
 import { createBrowserRouter } from "react-router-dom"
 import Layout from "./components/Layout"
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     },
     {
      path:"profile/:user",
-     element:<UserProfilePage />
+      element:<UserProfileDetails />
     }
   ],
 }

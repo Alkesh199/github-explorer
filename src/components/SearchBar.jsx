@@ -9,7 +9,9 @@ const SearchBar = () => {
     }
 
     const handleSearchBtnClick = ()=>{
-        console.log("search btn click and search text is",searchText);
+        if(searchText.length===0){
+            alert("can't search with empty name");
+        }
     }
 
     const clearBtnClick = () =>{
